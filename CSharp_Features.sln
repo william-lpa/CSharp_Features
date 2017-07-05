@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp_7", "CSharp_7\CSharp_7.csproj", "{B97B83FF-7DCA-4031-91CE-AD8F9AB17A6D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp_5", "CSharp_5\CSharp_5.csproj", "{E6405818-0F01-4DD7-9961-D4CB3AB18E68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Features CSharp 5", "Features CSharp 5", "{E6DCEC72-3205-48B6-9054-E957971E5241}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncronousReadWrite", "AsyncronousReadWrite\AsyncronousReadWrite.csproj", "{C857D512-02A0-458D-86F4-0D6C793C9D48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +25,15 @@ Global
 		{E6405818-0F01-4DD7-9961-D4CB3AB18E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6405818-0F01-4DD7-9961-D4CB3AB18E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6405818-0F01-4DD7-9961-D4CB3AB18E68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C857D512-02A0-458D-86F4-0D6C793C9D48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C857D512-02A0-458D-86F4-0D6C793C9D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C857D512-02A0-458D-86F4-0D6C793C9D48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C857D512-02A0-458D-86F4-0D6C793C9D48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C857D512-02A0-458D-86F4-0D6C793C9D48} = {E6DCEC72-3205-48B6-9054-E957971E5241}
 	EndGlobalSection
 EndGlobal
