@@ -30,6 +30,7 @@ namespace AsyncronousReadWrite
                 label1.Text = progressBar1.Value + "%";
             }));
         }
+
         private async Task DownloadFile5Async()
         {
             var request = new WebRequestOperation();
@@ -42,7 +43,6 @@ namespace AsyncronousReadWrite
             MessageBox.Show("Finalizado!");
 
         }
-
         private void DownloadFile4Async(object sender, EventArgs e)
         {
             var request = new WebRequestOperation();
