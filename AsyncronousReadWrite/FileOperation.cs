@@ -19,7 +19,7 @@ namespace AsyncronousReadWrite
             if (!File.Exists(fileName))
             {
                 FullFileName = Path.Combine(directoryPathName, fileName);
-                File.Create(FullFileName);
+                File.Create(FullFileName).Dispose();
                 FileName = fileName;
             }
         }
@@ -31,6 +31,18 @@ namespace AsyncronousReadWrite
                 file.Write(fileData, 0, fileData.Length);
             }
             RenameFile();
+        }
+        internal async Task WriteDownloadedFileToDiskAsync(byte[] fileData)
+        {
+            using (var file = new FileStream(FullFileName, FileMode.Open))
+            {
+                await file.WriteAsync(fileData, 0, fileData.Length);
+            }
+            RenameFile();
+        }
+        private void RenameFile()
+        {
+            File.Move(FullFileName, FullFileName.Replace(FileName, "processed.zip"));
         }
 
         internal void WriteDownloadedFileToDiskOldAsync(byte[] fileData)
@@ -50,17 +62,5 @@ namespace AsyncronousReadWrite
             File.Move(FullFileName, FullFileName.Replace(FileName, "processed.zip"));
         }
 
-        internal async Task WriteDownloadedFileToDiskAsync(byte[] fileData)
-        {
-            using (var file = new FileStream(FullFileName, FileMode.Open))
-            {
-                await file.WriteAsync(fileData, 0, fileData.Length);
-            }
-            RenameFile();
-        }
-        private void RenameFile()
-        {
-            File.Move(FullFileName, FullFileName.Replace(FileName, "processed.zip"));
-        }
     }
 }

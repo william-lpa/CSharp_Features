@@ -30,7 +30,7 @@ namespace AsyncronousReadWrite
                 label1.Text = progressBar1.Value + "%";
             }));
         }
-        private async Task DownloadFileAsync()
+        private async Task DownloadFile5Async()
         {
             var request = new WebRequestOperation();
             request.ProgressBarValueChanged += IncreaseProgressBar;
@@ -43,14 +43,21 @@ namespace AsyncronousReadWrite
 
         }
 
-        private void DownloadFile(object sender, EventArgs e)
+        private void DownloadFile4Async(object sender, EventArgs e)
         {
             var request = new WebRequestOperation();
             request.ProgressBarValueChanged += IncreaseProgressBar;
-            var data = request.DownloadFileAsync().Result;
-            var localFile = CreateDownloadingFileOnDisk();            
+            var data = request.DownloadFileOldAsync();
             MessageBox.Show("Vamos Começar a gravar o download no arquivo!");
-            localFile.WriteDownloadedFileToDisk(data);
+            CreateDownloadingFileOnDisk().WriteDownloadedFileToDiskOldAsync(data);
+            MessageBox.Show("Finalizado!");
+        }
+        private void DownloadFileNonAsync(object sender, EventArgs e)
+        {
+            var request = new WebRequestOperation();
+            var data = request.DownloadFile();
+            MessageBox.Show("Vamos Começar a gravar o download no arquivo!");
+            CreateDownloadingFileOnDisk().WriteDownloadedFileToDisk(data);
             MessageBox.Show("Finalizado!");
         }
 
@@ -59,16 +66,23 @@ namespace AsyncronousReadWrite
             return new FileOperation("teste.zip", @"C:\Teste Download");
         }
 
-        private void btnNonAssync_Click(object sender, EventArgs e)
+        private void btnAsync4_Click(object sender, EventArgs e)
         {
             var worker = new BackgroundWorker();
-            worker.DoWork+=DownloadFile;
+            worker.DoWork += DownloadFile4Async;
             worker.RunWorkerAsync();
         }
 
-        private void btnAsync_Click(object sender, EventArgs e)
+        private void btnAsync5_Click(object sender, EventArgs e)
+        {//wpf supports assync calls
+            DownloadFile5Async();
+        }
+
+        private void btn_NonAsync_Click(object sender, EventArgs e)
         {
-            DownloadFileAsync();
+            var worker = new BackgroundWorker();
+            worker.DoWork += DownloadFileNonAsync;
+            worker.RunWorkerAsync();
         }
     }
 }

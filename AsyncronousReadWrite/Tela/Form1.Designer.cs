@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.btnNonAssync = new System.Windows.Forms.Button();
-            this.btnAsync = new System.Windows.Forms.Button();
+            this.btnAsync4 = new System.Windows.Forms.Button();
+            this.btnAsync5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_NonAsync = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // progressBar1
@@ -41,25 +42,25 @@
             this.progressBar1.Size = new System.Drawing.Size(594, 23);
             this.progressBar1.TabIndex = 0;
             // 
-            // btnNonAssync
+            // btnAsync4
             // 
-            this.btnNonAssync.Location = new System.Drawing.Point(245, 93);
-            this.btnNonAssync.Name = "btnNonAssync";
-            this.btnNonAssync.Size = new System.Drawing.Size(173, 23);
-            this.btnNonAssync.TabIndex = 1;
-            this.btnNonAssync.Text = "I/O Não Assíncrono";
-            this.btnNonAssync.UseVisualStyleBackColor = true;
-            this.btnNonAssync.Click += new System.EventHandler(this.btnNonAssync_Click);
+            this.btnAsync4.Location = new System.Drawing.Point(252, 151);
+            this.btnAsync4.Name = "btnAsync4";
+            this.btnAsync4.Size = new System.Drawing.Size(173, 23);
+            this.btnAsync4.TabIndex = 1;
+            this.btnAsync4.Text = "I/O Assíncrono C# 4.0";
+            this.btnAsync4.UseVisualStyleBackColor = true;
+            this.btnAsync4.Click += new System.EventHandler(this.btnAsync4_Click);
             // 
-            // btnAsync
+            // btnAsync5
             // 
-            this.btnAsync.Location = new System.Drawing.Point(245, 151);
-            this.btnAsync.Name = "btnAsync";
-            this.btnAsync.Size = new System.Drawing.Size(173, 23);
-            this.btnAsync.TabIndex = 2;
-            this.btnAsync.Text = "I/O Assíncrono";
-            this.btnAsync.UseVisualStyleBackColor = true;
-            this.btnAsync.Click += new System.EventHandler(this.btnAsync_Click);
+            this.btnAsync5.Location = new System.Drawing.Point(431, 151);
+            this.btnAsync5.Name = "btnAsync5";
+            this.btnAsync5.Size = new System.Drawing.Size(173, 23);
+            this.btnAsync5.TabIndex = 2;
+            this.btnAsync5.Text = "I/O Assíncrono C# 5.0";
+            this.btnAsync5.UseVisualStyleBackColor = true;
+            this.btnAsync5.Click += new System.EventHandler(this.btnAsync5_Click);
             // 
             // label1
             // 
@@ -70,14 +71,25 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "0%";
             // 
+            // btn_NonAsync
+            // 
+            this.btn_NonAsync.Location = new System.Drawing.Point(73, 151);
+            this.btn_NonAsync.Name = "btn_NonAsync";
+            this.btn_NonAsync.Size = new System.Drawing.Size(173, 23);
+            this.btn_NonAsync.TabIndex = 4;
+            this.btn_NonAsync.Text = "I/O Não Assíncrono";
+            this.btn_NonAsync.UseVisualStyleBackColor = true;
+            this.btn_NonAsync.Click += new System.EventHandler(this.btn_NonAsync_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(674, 330);
+            this.Controls.Add(this.btn_NonAsync);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnAsync);
-            this.Controls.Add(this.btnNonAssync);
+            this.Controls.Add(this.btnAsync5);
+            this.Controls.Add(this.btnAsync4);
             this.Controls.Add(this.progressBar1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -89,9 +101,10 @@
         #endregion
 
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button btnNonAssync;
-        private System.Windows.Forms.Button btnAsync;
+        private System.Windows.Forms.Button btnAsync4;
+        private System.Windows.Forms.Button btnAsync5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_NonAsync;
     }
 }
 
