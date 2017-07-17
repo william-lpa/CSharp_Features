@@ -1,33 +1,50 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.ExceptionServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ThrowExample
 {
     class Program
     {
+        private const int cenarioError = 0;
         static void Main(string[] args)
         {
-            DoSomething();
-        }
-
-        private static void DoSomething()
-        {
-            Console.WriteLine("Some Work Done!");
             try
             {
-                ThrowAndError(0);
+                DoSomething();
             }
             catch (Exception exception)
             {
                 Console.WriteLine(exception.StackTrace);
             }
+            Console.ReadKey();
         }
 
-        private static void ThrowAndError(int cenarioError)
+        private static void DoSomething()
+        {
+            try
+            {
+                Console.WriteLine("Some Work Done!");
+                throw new NotImplementedException("vish");
+                ThrowOne();
+
+            }
+            catch (Exception r)
+            {
+                throw new Exception("s");
+            }
+        }
+
+        private static void ThrowOne()
+        {
+            ThrowTwo();
+        }
+
+        private static void ThrowTwo()
+        {
+            ThrowThree();
+        }
+
+        private static void ThrowThree()
         {
             try
             {
@@ -49,7 +66,5 @@ namespace ThrowExample
                 }
             }
         }
-
-
     }
 }

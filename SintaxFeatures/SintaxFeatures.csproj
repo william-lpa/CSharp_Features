@@ -49,6 +49,8 @@
     <Compile Include="AutoPropertyInitializers.cs" />
     <Compile Include="ExceptionFilters.cs" />
     <Compile Include="ExpressionBodiedMembers.cs" />
+    <Compile Include="IndexInitializers.cs" />
+    <Compile Include="NameOfExpression.cs" />
     <Compile Include="NullPropagation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
