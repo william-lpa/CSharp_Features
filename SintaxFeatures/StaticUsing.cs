@@ -5,12 +5,12 @@ namespace SintaxFeatures
 {
     class BeforeStaticUsing
     {
-        public int RoundedNumber { get; set; }
+        public int IntegerNumber { get; set; }
 
         public BeforeStaticUsing(string number)
         {
             if (!string.IsNullOrWhiteSpace(number))
-                RoundedNumber = RoundNumber(double.Parse(number));
+                IntegerNumber = RoundNumber(double.Parse(number));
         }
 
         private int RoundNumber(double number) => (int)Math.Round(number);

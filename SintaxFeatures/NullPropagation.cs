@@ -13,13 +13,13 @@ namespace SintaxFeatures
         {
             var beforeElvis = new BeforeNullPropagationReadTextFile();
             beforeElvis.ReadFile();
-            Console.WriteLine(beforeElvis.ProcessFile()?.ToUpper());
+            var processedFile = beforeElvis.ProcessFile();
+            if (processedFile != null)
+                Console.WriteLine(processedFile.ToUpper());
 
             var afterElvis = new AfterNullPropagationReadTextFile();
             afterElvis.ReadFile();
-            var processedFile = afterElvis.ProcessFile();
-            if (afterElvis.ProcessFile() != null)
-                Console.WriteLine(processedFile.ToUpper());
+            Console.WriteLine(afterElvis?.ProcessFile()?.ToUpper());
         }
     }
 
@@ -48,9 +48,11 @@ namespace SintaxFeatures
             {
                 if (line != null)
                 {
-                    var stream = File.CreateText("c://" + line.Substring(0, 2) + ".dat");
-                    if (stream != null)
-                        stream.Write(line.GetType() != null ? line.GetType().GUID.ToByteArray() : null);
+                    using (var stream = File.CreateText("c://" + line.Substring(0, 2) + ".dat"))
+                    {
+                        if (stream != null)
+                            stream.Write(line.GetType() != null ? line.GetType().GUID.ToByteArray() : null);
+                    }
                 }
             }
             return "ok!";

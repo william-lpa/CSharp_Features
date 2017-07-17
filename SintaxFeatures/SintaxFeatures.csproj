@@ -48,12 +48,12 @@
   <ItemGroup>
     <Compile Include="AutoPropertyInitializers.cs" />
     <Compile Include="ExpressionBodiedMembers.cs" />
+    <Compile Include="NullPropagation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadOnlyAutoProperties.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
+    <Compile Include="StaticUsing.cs" />
+    <Compile Include="StringInterpolation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
