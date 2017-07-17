@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CSharp_5.Caller_Atributes
 {
-    class Log : IEnumerable<LogEntry>
+    public class Log : IEnumerable<LogEntry>
     {
         private const string LOG_DIRECTORY = "C:";
         private const string FILE_NAME = "log.txt";

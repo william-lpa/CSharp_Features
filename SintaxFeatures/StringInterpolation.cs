@@ -8,6 +8,11 @@ namespace SintaxFeatures
 {
     class StringInterpolation
     {
+        public StringInterpolation()
+        {
+            Console.WriteLine(new PersonBeforeStringInterpolation().ToString());
+            Console.WriteLine(new PersonAfterStringInterpolation().ToString());
+        }
     }
     class PersonBeforeStringInterpolation
     {

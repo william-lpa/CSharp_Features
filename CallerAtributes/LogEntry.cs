@@ -8,7 +8,7 @@ namespace CSharp_5.Caller_Atributes
     {
         Information, Warning, Error, Critical
     }
-    internal class LogEntry
+    public class LogEntry
     {
         public string Method { get; private set; }
         public string SourceFile { get; private set; }
