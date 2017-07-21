@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Deconstructor.cs" />
     <Compile Include="OutSelfDeclaring.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TupleReturn.cs" />
