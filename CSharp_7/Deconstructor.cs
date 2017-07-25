@@ -6,8 +6,8 @@ namespace CSharp_7
     {
         public Deconstructor()
         {
-            var now = new Rectangle(2, 5, 44, 60);
-            Console.WriteLine($"Area:{rectangle1.Area}, Width:{rectangle1.X}, Height:{rectangle1.Y}");
+            BeforeDeconstructor();
+            AfterDeconstructor();
         }
 
         public void BeforeDeconstructor()
