@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExpressionBodiedProperties.cs" />
     <Compile Include="RefLocals.cs" />
     <Compile Include="Deconstructor.cs" />
     <Compile Include="NestedFunctions.cs" />
