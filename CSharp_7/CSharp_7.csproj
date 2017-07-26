@@ -55,6 +55,7 @@
     <Compile Include="NestedFunctions.cs" />
     <Compile Include="OutSelfDeclaring.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThrowExpressions.cs" />
     <Compile Include="TupleReturn.cs" />
   </ItemGroup>
   <ItemGroup>
