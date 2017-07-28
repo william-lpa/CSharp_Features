@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{87315C79-7945-45D2-9059-0F4740C1A7FC}</ProjectGuid>
+    <ProjectGuid>{A5D77BCE-F5CB-49F0-8B75-E26CF0BA1A6B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CallerAtributes</RootNamespace>
-    <AssemblyName>CallerAtributes</AssemblyName>
+    <RootNamespace>LinqDeferredAvaliation</RootNamespace>
+    <AssemblyName>LinqDeferredAvaliation</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,10 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Log.cs" />
-    <Compile Include="LogEntry.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LinqDeferredAvaliation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

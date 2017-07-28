@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CallerAtributes
+namespace LinqDeferredAvaliation
 {
-    class YieldExample
+    class LinqDeferredAvaliation
     {
         private List<SessaoLeilao> leiloes;
 
-        public YieldExample()
+        public LinqDeferredAvaliation()
         {
             leiloes = new List<SessaoLeilao>();
         }
