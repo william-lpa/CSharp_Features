@@ -22,6 +22,11 @@ namespace CSharp_7
 
         private void SaveEach(string table, IList<Person> list, Person currentUser)
         {
+            var o = new object();
+            if ((o is int i) || (o is string s && int.TryParse(s, out i)))
+            {
+                Console.WriteLine(i);
+            }
             throw new NotImplementedException();
         }
     }
@@ -36,7 +41,7 @@ namespace CSharp_7
             var parts = Name.Split(' ');
             return (parts.Length > 0) ? parts[0] : throw new InvalidOperationException("No name!");
         }
-        
+
     }
 
 }
