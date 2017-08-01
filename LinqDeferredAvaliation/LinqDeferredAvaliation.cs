@@ -13,26 +13,27 @@ namespace LinqDeferredAvaliation
 
         public LinqDeferredAvaliation()
         {
-            leiloes = new List<SessaoLeilao>();
+            leiloes = CarregarSessoes();
         }
 
         public void GenerateCriticalReport()
         {
-            leiloes = Arrange();
+            var filteredList = GetLeiloesOcorridosNaUltimaHora();
 
-            var filteredList = Act(leiloes);
 
-            var thread = new Thread(() => ProcessReport());
+            filteredList = filteredList.OrderByDescending(x => x.NumeroSala);
 
+            var thread = new Thread(() => ProcessReport(filteredList));
+            thread.Start();
             UserDeleteRegisterBeforeReportFinish(4);
-
             thread.Join();
         }
 
-        private void ProcessReport()
+        private void ProcessReport(IEnumerable<SessaoLeilao> filteredList)
         {
             Thread.Sleep(3000); //some I/O Processing
-            leiloes.ForEach(x => Console.WriteLine(string.Concat(x.NumeroSala, "-", x.Codigo)));
+            filteredList.ToList().ForEach(x => Console.WriteLine(string.Concat(x.NumeroSala, "-", x.Codigo)));
+            Console.WriteLine($"Quantidade:{filteredList.Count()}");
         }
 
         private void UserDeleteRegisterBeforeReportFinish(int index)
@@ -40,7 +41,11 @@ namespace LinqDeferredAvaliation
             leiloes.RemoveAt(index);
         }
 
-        private List<SessaoLeilao> Arrange()
+        private IEnumerable<SessaoLeilao> GetLeiloesOcorridosNaUltimaHora()
+        {
+            return leiloes.Where(x => x.DataHoraUltimaOferta.Hour == DateTime.Now.Hour - 1);
+        }
+        private List<SessaoLeilao> CarregarSessoes()
         {
             var arrange = new List<SessaoLeilao>(15);
             for (int i = 0; i < 15; i++)
@@ -50,14 +55,10 @@ namespace LinqDeferredAvaliation
                     {
                         NumeroSala = i.ToString(),
                         Valor = Convert.ToDecimal(i),
-                        DataHoraUltimaOferta = DateTime.Now
+                        DataHoraUltimaOferta = DateTime.Now.AddHours(-1)
                     });
             }
             return arrange;
-        }
-        private IEnumerable<SessaoLeilao> Act(List<SessaoLeilao> leiloesNaUltimaHora)
-        {
-            return leiloesNaUltimaHora.Where(x => x.DataHoraUltimaOferta.Hour == DateTime.Now.Hour - 1);
         }
 
         private class SessaoLeilao
@@ -70,7 +71,6 @@ namespace LinqDeferredAvaliation
             {
                 Codigo = Guid.NewGuid();
             }
-
         }
     }
 }

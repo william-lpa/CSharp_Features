@@ -10,6 +10,8 @@ namespace LinqDeferredAvaliation
     {
         static void Main(string[] args)
         {
+            new LinqDeferredAvaliation().GenerateCriticalReport();
+            Console.ReadKey();
         }
     }
 }
