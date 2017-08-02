@@ -14,6 +14,7 @@ namespace ThrowExample
             }
             catch (Exception exception)
             {
+                Console.WriteLine(exception.Message);
                 Console.WriteLine(exception.StackTrace);
             }
             Console.ReadKey();
@@ -24,13 +25,23 @@ namespace ThrowExample
             try
             {
                 Console.WriteLine("Some Work Done!");
-                throw new NotImplementedException("vish");
                 ThrowOne();
 
             }
-            catch (Exception r)
+            catch (Exception err)
             {
-                throw new Exception("s");
+                switch (cenarioError)
+                {
+                    case 0:
+                        throw;
+                    case 1:
+                        throw err;
+                    case 2:
+                        throw new ArgumentException("Argument Exception");
+                    case 3:
+                        ExceptionDispatchInfo.Capture(err).Throw();
+                        break;
+                }
             }
         }
 
@@ -52,18 +63,7 @@ namespace ThrowExample
             }
             catch (Exception err)
             {
-                switch (cenarioError)
-                {
-                    case 0:
-                        throw;
-                    case 1:
-                        throw err;
-                    case 2:
-                        throw new ArgumentException("Method was not implemented");
-                    case 3:
-                        ExceptionDispatchInfo.Capture(err).Throw();
-                        break;
-                }
+                throw;
             }
         }
     }

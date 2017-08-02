@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqDeferredAvaliation", "L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YieldExample", "YieldExample\YieldExample.csproj", "{56878976-6D3A-4640-A66D-6015A86FD16B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateAndEvents", "Clock\DelegateAndEvents.csproj", "{A6FF9DB6-2BDC-48EA-B761-FCF69B1C42DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{56878976-6D3A-4640-A66D-6015A86FD16B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56878976-6D3A-4640-A66D-6015A86FD16B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56878976-6D3A-4640-A66D-6015A86FD16B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6FF9DB6-2BDC-48EA-B761-FCF69B1C42DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6FF9DB6-2BDC-48EA-B761-FCF69B1C42DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6FF9DB6-2BDC-48EA-B761-FCF69B1C42DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6FF9DB6-2BDC-48EA-B761-FCF69B1C42DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +77,6 @@ Global
 		{78C42162-CD52-406B-8973-43EBD3267B4C} = {3D057CE6-2BAA-4E2B-B4CC-FCD4B96DDC11}
 		{A5D77BCE-F5CB-49F0-8B75-E26CF0BA1A6B} = {3D057CE6-2BAA-4E2B-B4CC-FCD4B96DDC11}
 		{56878976-6D3A-4640-A66D-6015A86FD16B} = {3D057CE6-2BAA-4E2B-B4CC-FCD4B96DDC11}
+		{A6FF9DB6-2BDC-48EA-B761-FCF69B1C42DF} = {3D057CE6-2BAA-4E2B-B4CC-FCD4B96DDC11}
 	EndGlobalSection
 EndGlobal
