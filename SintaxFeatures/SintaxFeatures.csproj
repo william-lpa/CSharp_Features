@@ -52,7 +52,6 @@
     <Compile Include="IndexInitializers.cs" />
     <Compile Include="NameOfExpression.cs" />
     <Compile Include="NullPropagation.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadOnlyAutoProperties.cs" />
     <Compile Include="StaticUsing.cs" />

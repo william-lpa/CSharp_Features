@@ -23,7 +23,7 @@ namespace CSharp7
         }
         private void AfterOutSelfDeclaring()
         {
-            if (int.TryParse("123", out var convertedNumber)) //you can even ignore de value with a _
+            if (int.TryParse("123", out var nvertedNumber)) //you can even ignore de value with a _
             {
                 Console.WriteLine(convertedNumber);
             }

@@ -12,7 +12,7 @@ namespace CSharp_7
         public RefLocals()
         {
             ProcessAuthenticatedUsers();
-            var s = new Shape();
+            var s = new RectangleShape();
             var rect = new Rectangle(0, 0, 10, 20);
             s.Size = rect;
         }
@@ -30,7 +30,7 @@ namespace CSharp_7
         }
     }
 
-    class Shape
+    class RectangleShape
     {
         public int X { get; set; }
         public int Y { get; set; }

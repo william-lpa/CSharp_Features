@@ -19,7 +19,7 @@ namespace SintaxFeatures
     {
         public string Name { get; private set; }
         public string LastName { get; private set; }
-        public string Cpf { get; } = "000.000.000-00";
+        public string Cpf { get; }
         public ICollection<double> Grades { get; private set; }
 
         public BeforeAutoPropertyInitializers(string name, string lastName, string cpf)

@@ -15,13 +15,11 @@ namespace SintaxFeatures
             HandleExceptionAfterExceptionFilters();
         }
 
-        public static string HandleExceptionBeforeExceptionFilters()
+        public static async Task<string> HandleExceptionBeforeExceptionFilters()
         {
             try
             {
-                var streamTask = new System.Net.Http.HttpClient().GetStringAsync("https://localHost:10000");
-                var responseText = streamTask.Result;
-                return responseText;
+                return await new System.Net.Http.HttpClient().GetStringAsync("https://localHost:10000");
             }
             catch (System.Net.Http.HttpRequestException e)
             {
@@ -41,12 +39,10 @@ namespace SintaxFeatures
         }
         public static async Task<string> HandleExceptionAfterExceptionFilters()
         {
-            var client = new System.Net.Http.HttpClient();
-            var streamTask = client.GetStringAsync("https://localHost:10000");
             try
             {
-                var responseText = await streamTask;
-                return responseText;
+                var client = new System.Net.Http.HttpClient();
+                return await client.GetStringAsync("https://localHost:10000");
             }
             catch (System.Net.Http.HttpRequestException e) when (e.Message.Contains("301"))
             {

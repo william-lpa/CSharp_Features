@@ -17,7 +17,7 @@ namespace CSharp_7
 
         void NowSave(IList<Person> customers, Person currentUser)
         {
-            SaveEach("dbo.Cliente", (customers == null || customers.Count == 0) ? customers : throw new ArgumentException("No customers to save"), currentUser);
+            SaveEach("dbo.Cliente", (customers != null || customers.Count > 0) ? customers : throw new ArgumentException("No customers to save"), currentUser);
         }
 
         private void SaveEach(string table, IList<Person> list, Person currentUser)

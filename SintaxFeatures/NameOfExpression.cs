@@ -30,7 +30,7 @@ namespace SintaxFeatures
             get { return lastName; }
             set
             {
-                ValidateNullField(nameof(firstName));
+                ValidateNullField("lastName");
             }
         }
         public PersonBeforeNameOfExpression(string firstName, string lastName)
@@ -72,7 +72,7 @@ namespace SintaxFeatures
     {
         protected void ValidateNullField(string parameter)
         {
-            if (string.IsNullOrWhiteSpace(parameter)) throw new ArgumentException("Cannot be null", nameof(parameter));
+            if (string.IsNullOrWhiteSpace(parameter)) throw new ArgumentException("Cannot be null", parameter);
         }
     }
 }

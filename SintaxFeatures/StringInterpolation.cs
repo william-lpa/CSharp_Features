@@ -26,11 +26,11 @@ namespace SintaxFeatures
 
         public string ToStringConcatenation()
         {
-            return FullName + "has" + Age + "years old and he lives at" + Address + ". He likes chocolate ice cream";
+            return FullName + " has " + Age + " years old and he lives at " + Address + ". He likes chocolate ice cream";
         }
         public string ToStringConcatMethod()
         {
-            return string.Concat(FullName, "has", Age, "years old and he lives at", Address, ". He likes chocolate ice cream");
+            return string.Concat(FullName, " has ", Age, " years old and he lives at ", Address, ". He likes chocolate ice cream");
         }
         public string ToStringStringFormat()
         {
